@@ -4,7 +4,7 @@
 
 โปรเจกต์นี้เป็น fork ของ [HeliBoard](https://github.com/HeliBorg/HeliBoard) (ซึ่งพัฒนาต่อจาก [OpenBoard](https://github.com/openboard-team/openboard) และ [AOSP Keyboard](https://android.googlesource.com/platform/packages/inputmethods/LatinIME/)) ปรับแก้เพื่อให้พิมพ์ภาษาไทยได้ลื่นและใช้งานได้จริงมากขึ้น
 
-ส่วนที่แก้ไขทำงานเฉพาะตอนพิมพ์ภาษาไทย (locale `th`) ภาษาอื่นทำงานเหมือน HeliBoard ต้นฉบับทุกประการ
+ส่วนที่แก้ไขทำงานเฉพาะตอนพิมพ์ภาษาไทย (locale `th`) ภาษาอื่นทำงานเหมือน HeliBoard ต้นฉบับ
 
 > โปรเจกต์นี้ไม่ใช่โปรเจกต์ทางการของ HeliBoard และไม่ได้เกี่ยวข้องกับผู้พัฒนา HeliBoard ปัญหาที่เกี่ยวกับส่วนที่แก้ไขในเวอร์ชันนี้ ให้แจ้งที่ repository นี้ อย่าแจ้งที่ HeliBoard ต้นฉบับ
 
