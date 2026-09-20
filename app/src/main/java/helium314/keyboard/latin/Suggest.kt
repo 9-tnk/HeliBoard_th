@@ -82,6 +82,17 @@ class Suggest(private val mDictionaryFacilitator: DictionaryFacilitator) {
         val trailingSingleQuotesCount = StringUtils.getTrailingSingleQuotesCount(typedWordString)
         val capsMode = getCapsModeForTyping(wordComposer, keyboard)
         val suggestionsContainer = ArrayList(suggestionResults)
+        if (mDictionaryFacilitator.mainLocale.language == "th") {
+        // ตัดคำแนะนำมั่วจากพจนานุกรมหลัก: มีช่องว่าง, พยัญชนะเดี่ยว, ตัวอักษรซ้ำล้วน
+        suggestionsContainer.removeAll { info ->
+        if (info.mSourceDict.mDictType != Dictionary.TYPE_MAIN) return@removeAll false
+        val s = info.mWord
+        val thai = s.isNotEmpty() && s[0] in '\u0E00'..'\u0E7F'
+        s.contains(' ')
+            || (thai && s.length == 1)
+            || (thai && s.length >= 3 && s.all { it == s[0] })
+        }
+        }
         capitalizeAndAddTrailingSingleQuotes(suggestionsContainer, capsMode, trailingSingleQuotesCount, mDictionaryFacilitator.mainLocale)
         val capitalizedTypedWord = capitalize(typedWordString, capsMode, mDictionaryFacilitator.mainLocale)
 
