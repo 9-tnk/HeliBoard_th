@@ -84,6 +84,8 @@ public final class InputLogic {
     private static final String TAG = InputLogic.class.getSimpleName();
     private static final char INLINE_EMOJI_SEARCH_MARKER = ':';
     private static final int[] EMPTY_CODE_POINTS = new int[0];
+    // ภาษาไทยไม่มี space: ตัด composing text เมื่อยาวถึงจำนวนนี้ (ปรับได้ 6-16)
+    private static final int THAI_MAX_COMPOSING_LENGTH = 8;
 
     // TODO : Remove this member when we can.
     final LatinIME mLatinIME;
