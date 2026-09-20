@@ -2,23 +2,8 @@
 
 **HeliBoard เวอร์ชันที่แก้ไขปัญหาการพิมพ์ภาษาไทย**
 
-โปรเจกต์นี้เป็น fork ของ [HeliBoard](https://github.com/HeliBorg/HeliBoard) (ซึ่งพัฒนาต่อจาก [OpenBoard](https://github.com/openboard-team/openboard) และ [AOSP Keyboard](https://android.googlesource.com/platform/packages/inputmethods/LatinIME/)) ปรับแก้เพื่อให้พิมพ์ภาษาไทยได้ลื่นและใช้งานได้จริงมากขึ้น
-
-ส่วนที่แก้ไขทำงานเฉพาะตอนพิมพ์ภาษาไทย (locale `th`) ภาษาอื่นทำงานเหมือน HeliBoard ต้นฉบับ
-
-> โปรเจกต์นี้ไม่ใช่โปรเจกต์ทางการของ HeliBoard และไม่ได้เกี่ยวข้องกับผู้พัฒนา HeliBoard ปัญหาที่เกี่ยวกับส่วนที่แก้ไขในเวอร์ชันนี้ ให้แจ้งที่ repository นี้ อย่าแจ้งที่ HeliBoard ต้นฉบับ
-เมื่อยาวถึง 10 ตัวอักษร (ปรับได้ที่ค่า `THAI_MAX_COMPOSING_LENGTH`) โดยไม่แยกสระบน/ล่าง วรรณยุกต์ และสระหน้า (เ แ โ ไ ใ) ออกจากพยัญชนะ
-
-## เครดิตและสัญญาอนุญาต
-
-โปรเจกต์นี้ดัดแปลงมาจาก HeliBoard และเผยแพร่ภายใต้สัญญาอนุญาตเดียวกับต้นฉบับ คือ **GNU General Public License v3.0** ผลงานทั้งหมดเป็นของผู้พัฒนาต้นฉบับ
-
-- [HeliBoard](https://github.com/HeliBorg/HeliBoard) และ [ผู้ร่วมพัฒนา](https://github.com/HeliBorg/HeliBoard/graphs/contributors) ทั้งหมด
-- [OpenBoard](https://github.com/openboard-team/openboard)
-- [AOSP Keyboard](https://android.googlesource.com/platform/packages/inputmethods/LatinIME/)
-- [PyThaiNLP](https://github.com/PyThaiNLP/pythainlp) สำหรับคลังคำภาษาไทย
-
-รายละเอียดเครดิตและสัญญาอนุญาตฉบับเต็มของต้นฉบับอยู่ด้านล่าง
+โปรเจกต์นี้เป็น fork ของ [HeliBoard](https://github.com/HeliBorg/HeliBoard) ปรับแก้เพื่อให้พิมพ์ภาษาไทยได้ลื่นและใช้งานได้จริงมากขึ้น
+> ส่วนที่แก้ไขทำงานเฉพาะตอนพิมพ์ภาษาไทย ภาษาอื่นทำงานเหมือน HeliBoard ต้นฉบับ
 
 ---
 
