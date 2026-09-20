@@ -1,10 +1,21 @@
+# HeliBoard_th
+
+**HeliBoard เวอร์ชันที่แก้ไขปัญหาการพิมพ์ภาษาไทย**
+
+โปรเจกต์นี้เป็น fork ของ [HeliBoard](https://github.com/HeliBorg/HeliBoard) โดย Helium314 และผู้ร่วมพัฒนา ปรับแก้เพื่อให้ประสบการณ์พิมพ์ในภาษาไทยดียิ่งขึ้น
+> ส่วนที่แก้ไขทำงานเฉพาะตอนพิมพ์ภาษาไทย ภาษาอื่นทำงานเหมือน HeliBoard ต้นฉบับ
+
+**ประกาศการดัดแปลง:** แก้ไขจาก HeliBoard ในไฟล์ `InputLogic.java`, `Suggest.kt`, `SettingsValues.java`, `suggestions_strip_divider.xml`, `strings.xml` แก้ไขเฉพาะพฤติกรรมภาษาไทยและปรับแต่งชื่อไฟล์และสีของแถบคำแนะนำเพิ่มเติม (เผยแพร่ภายใต้ GPL-3.0 เช่นเดียวกับต้นฉบับ)
+
+---
+
+*ส่วนด้านล่างคือ README ของ HeliBoard ต้นฉบับ คงไว้เพื่อรายละเอียดและเครดิต*
+
+---
+
 # HeliBoard
 HeliBoard is a privacy-conscious and customizable open-source keyboard, based on AOSP / OpenBoard.
 Does not use internet permission, and thus is 100% offline.
-
-[<img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png" alt="Get it on F-Droid" height="80">](https://f-droid.org/packages/helium314.keyboard/)
-[<img src="https://user-images.githubusercontent.com/663460/26973090-f8fdc986-4d14-11e7-995a-e7c5e79ed925.png" alt="Get APK from GitHub" height="80">](https://github.com/HeliBorg/HeliBoard/releases/latest)
-[<img src="https://gitlab.com/IzzyOnDroid/repo/-/raw/master/assets/IzzyOnDroid.png" alt="Get it on IzzyOnDroid" height="80">](https://apt.izzysoft.de/fdroid/index/apk/helium314.keyboard)
 
 ## Table of Contents
 
