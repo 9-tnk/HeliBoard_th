@@ -8,13 +8,13 @@
 
 **ประกาศการดัดแปลง:** แก้ไขจาก HeliBoard เมื่อปี 2026 โดย [9-tnk](https://github.com/9-tnk) ในไฟล์ `InputLogic.java`, `Suggest.kt`, `SettingsValues.java`, `suggestions_strip_divider.xml` และ `strings.xml` ปรับพฤติกรรมเฉพาะภาษาไทย, ปรับสีของแถบคำแนะนำ และปรับเปลี่ยนชื่อของแอป (เผยแพร่ภายใต้ GPL-3.0 เช่นเดียวกับต้นฉบับ)
 
-พจนานุกรมภาษาไทยสร้างจากคลังคำของ [PyThaiNLP](https://github.com/PyThaiNLP/pythainlp/tree/dev/pythainlp/corpus) (CC0-1.0)
+**เครดิตเพิ่มเติม:** พจนานุกรมภาษาไทยสร้างจากคลังคำของ [PyThaiNLP](https://github.com/PyThaiNLP/pythainlp/tree/dev/pythainlp/corpus) (CC0-1.0)
 
-โปรเจกต์นี้ไม่ใช่เวอร์ชันทางการของ HeliBoard และไม่ได้รับการรับรองจากผู้พัฒนา ปัญหาของส่วนที่แก้ไขให้แจ้งที่ repo นี้
+โปรเจกต์นี้ไม่ใช่เวอร์ชันทางการของ HeliBoard และไม่ได้รับการรับรองจากผู้พัฒนา
 
 ---
 
-*ส่วนด้านล่างคือ README ของ HeliBoard ต้นฉบับ คงไว้เพื่อรายละเอียดและเครดิต*
+*ส่วนด้านล่างคือ README ของ HeliBoard ต้นฉบับ คงไว้เพื่อรายละเอียดและเครดิต ลิงก์และคำแนะนำในส่วนนี้เป็นของโปรเจกต์ต้นฉบับ*
 
 ---
 
