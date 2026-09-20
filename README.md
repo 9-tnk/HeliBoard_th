@@ -7,7 +7,7 @@
 
 ---
 
-## Credits & License
+# Credits & License
 
 - This project is a fork of and builds upon **[HeliBoard](https://github.com/HeliBorg/HeliBoard)** by [Helium314](https://github.com/Helium314) and [all contributors](https://github.com/HeliBorg/HeliBoard/graphs/contributors).
 - Released under the **GNU General Public License v3.0 (GPLv3)**, identical to the upstream project ([LICENSE](LICENSE)).
