@@ -5,7 +5,11 @@
 โปรเจกต์นี้เป็น fork ของ [HeliBoard](https://github.com/HeliBorg/HeliBoard) โดย Helium314 และผู้ร่วมพัฒนา ปรับแก้เพื่อให้ประสบการณ์พิมพ์ในภาษาไทยดียิ่งขึ้น
 > ส่วนที่แก้ไขทำงานเฉพาะตอนพิมพ์ภาษาไทย ภาษาอื่นทำงานเหมือน HeliBoard ต้นฉบับ
 
-**ประกาศการดัดแปลง:** แก้ไขจาก HeliBoard ในไฟล์ `InputLogic.java`, `Suggest.kt`, `SettingsValues.java`, `suggestions_strip_divider.xml`, `strings.xml` แก้ไขเฉพาะพฤติกรรมภาษาไทยและปรับแต่งชื่อไฟล์และสีของแถบคำแนะนำเพิ่มเติม (เผยแพร่ภายใต้ GPL-3.0 เช่นเดียวกับต้นฉบับ)
+**ประกาศการดัดแปลง:** แก้ไขจาก HeliBoard เมื่อปี 2026 โดย [9-tnk](https://github.com/9-tnk) ในไฟล์ `InputLogic.java`, `Suggest.kt`, `SettingsValues.java`, `suggestions_strip_divider.xml` และ `strings.xml` ปรับพฤติกรรมเฉพาะภาษาไทย และปรับชื่อแอปและสีของแถบคำแนะนำ (เผยแพร่ภายใต้ GPL-3.0 เช่นเดียวกับต้นฉบับ)
+
+โปรเจกต์นี้ไม่ใช่เวอร์ชันทางการของ HeliBoard และไม่ได้รับการรับรองจากผู้พัฒนา ปัญหาของส่วนที่แก้ไขให้แจ้งที่ repo นี้
+
+พจนานุกรมภาษาไทยสร้างจากคลังคำของ [PyThaiNLP](https://github.com/PyThaiNLP/pythainlp/tree/dev/pythainlp/corpus) (CC0-1.0)
 
 ---
 
