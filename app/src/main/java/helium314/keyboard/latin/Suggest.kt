@@ -91,6 +91,12 @@ class Suggest(private val mDictionaryFacilitator: DictionaryFacilitator) {
         val typedWordFirstOccurrenceWordInfo = suggestionsContainer.firstOrNull { it.mWord == capitalizedTypedWord }
         val firstOccurrenceOfTypedWordInSuggestions = SuggestedWordInfo.removeDupsAndTypedWord(capitalizedTypedWord, suggestionsContainer)
         makeFirstTwoSuggestionsNonEmoji(suggestionsContainer)
+        if (mDictionaryFacilitator.mainLocale.language == "th") {
+           // ไทย: ขึ้น shortcut เฉพาะเมื่อพิมพ์ตรงกับรายการในพจนานุกรมส่วนตัวครบทั้งคำ
+           val exactUserEntry = typedWordFirstOccurrenceWordInfo?.mSourceDict?.mDictType == Dictionary.TYPE_USER
+           if (exactUserEntry) suggestionsContainer.retainAll { it.isKindOf(SuggestedWordInfo.KIND_SHORTCUT) }
+           else suggestionsContainer.clear()
+        }
 
         val (allowsToBeAutoCorrected, hasAutoCorrection) = shouldBeAutoCorrected(
             trailingSingleQuotesCount,
