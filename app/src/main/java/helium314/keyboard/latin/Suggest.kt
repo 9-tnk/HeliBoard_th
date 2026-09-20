@@ -91,12 +91,6 @@ class Suggest(private val mDictionaryFacilitator: DictionaryFacilitator) {
         val typedWordFirstOccurrenceWordInfo = suggestionsContainer.firstOrNull { it.mWord == capitalizedTypedWord }
         val firstOccurrenceOfTypedWordInSuggestions = SuggestedWordInfo.removeDupsAndTypedWord(capitalizedTypedWord, suggestionsContainer)
         makeFirstTwoSuggestionsNonEmoji(suggestionsContainer)
-        if (mDictionaryFacilitator.mainLocale.language == "th") {
-        // ไทย: ขึ้นทางลัดเฉพาะเมื่อคำที่พิมพ์เป็นคำที่มีในพจนานุกรมครบทั้งคำ
-        if (typedWordFirstOccurrenceWordInfo != null)
-        suggestionsContainer.retainAll { it.isKindOf(SuggestedWordInfo.KIND_SHORTCUT) || it.isKindOf(SuggestedWordInfo.KIND_WHITELIST) }
-        else suggestionsContainer.clear()
-        }
 
         val (allowsToBeAutoCorrected, hasAutoCorrection) = shouldBeAutoCorrected(
             trailingSingleQuotesCount,
