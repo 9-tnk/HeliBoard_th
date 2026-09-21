@@ -6,7 +6,7 @@
 
 > ส่วนที่แก้ไขทำงานเฉพาะตอนพิมพ์ภาษาไทย ภาษาอื่นทำงานเหมือน HeliBoard ต้นฉบับ
 
-**ประกาศการดัดแปลง:** แก้ไขจาก HeliBoard เมื่อปี 2026 โดย [9-tnk](https://github.com/9-tnk) ในไฟล์ `InputLogic.java`, `Suggest.kt`, `suggestions_strip_divider.xml` และ `strings.xml` ปรับพฤติกรรมเฉพาะภาษาไทย, ปรับสีของแถบคำแนะนำ และปรับเปลี่ยนชื่อของแอป (เผยแพร่ภายใต้ GPL-3.0 เช่นเดียวกับต้นฉบับ)
+**ประกาศการดัดแปลง:** แก้ไขจาก HeliBoard เมื่อปี 2026 โดย [9-tnk](https://github.com/9-tnk) ในไฟล์ `InputLogic.java`, `KeyboardView.java`, `Suggest.kt`, `suggestions_strip_divider.xml` และ `strings.xml` ปรับพฤติกรรมเฉพาะภาษาไทย, แก้ไขสีของ popup icon, ปรับสีของแถบคำแนะนำ และปรับเปลี่ยนชื่อของแอป (เผยแพร่ภายใต้ GPL-3.0 เช่นเดียวกับต้นฉบับ)
 
 **เครดิตเพิ่มเติม:** พจนานุกรมภาษาไทยสร้างจากคลังคำของ [PyThaiNLP](https://github.com/PyThaiNLP/pythainlp/tree/dev/pythainlp/corpus)
 
