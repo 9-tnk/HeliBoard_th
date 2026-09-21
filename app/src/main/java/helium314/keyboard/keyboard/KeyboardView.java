@@ -529,6 +529,9 @@ public class KeyboardView extends View {
                                       : params.mHintLabelVerticalAdjustment * iconSize;
             hintIcon.setColorFilter(key.selectHintTextColor(params), PorterDuff.Mode.MULTIPLY);
             drawIcon(canvas, hintIcon, (int)hintX, (int)(hintBaseline + adjustmentY), iconSize, iconSize);
+            // ไอคอนถูกใช้ร่วมกันระหว่าง hint กับไอคอนปกติ: ล้างสี hint ออกหลังวาด
+            // ไม่งั้นสีเทาจะค้างที่ไอคอนตัวเดียวกันเวลาไปวาดเป็นไอคอนปกติหรือใน popup
+            hintIcon.clearColorFilter();
         } else if (key.getPopupKeys() != null && ! key.hasNoPanelAutoPopupKey()
                         && (key.hasActionKeyBackground() || key.getBackgroundType() == Key.BACKGROUND_TYPE_FUNCTIONAL)) {
             drawKeyPopupHint(key, canvas, paint, params);
