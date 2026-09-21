@@ -84,6 +84,8 @@ public final class InputLogic {
     private static final String TAG = InputLogic.class.getSimpleName();
     private static final char INLINE_EMOJI_SEARCH_MARKER = ':';
     private static final int[] EMPTY_CODE_POINTS = new int[0];
+    // ภาษาไทยไม่มี space: ตัด composing text เมื่อยาวถึงจำนวนนี้ (ปรับได้ 6-16)
+    private static final int THAI_MAX_COMPOSING_LENGTH = 8;
 
     // TODO : Remove this member when we can.
     final LatinIME mLatinIME;
@@ -1073,6 +1075,10 @@ public final class InputLogic {
             resetEntireInputState(mConnection.getExpectedSelectionStart(), mConnection.getExpectedSelectionEnd(), true);
             isComposingWord = false;
         }
+        if (isComposingWord && shouldCutThaiComposingChunk(settingsValues, codePoint)) {
+            commitThaiComposingChunk();
+            isComposingWord = false;
+        }
         // We want to find out whether to start composing a new word with this character. If so,
         // we need to reset the composing state and switch isComposingWord. The order of the
         // tests is important for good performance.
@@ -1133,6 +1139,23 @@ public final class InputLogic {
         inputTransaction.setRequiresUpdateSuggestions();
     }
 
+    private boolean shouldCutThaiComposingChunk(final SettingsValues sv, final int nextCodePoint) {
+        if (!"th".equals(sv.mLocale.getLanguage())) return false;
+        if (mWordComposer.size() < THAI_MAX_COMPOSING_LENGTH) return false;
+        if (isInlineEmojiSearchAction()) return false;
+        // ห้ามแยกสระบน/ล่าง และวรรณยุกต์ ออกจากพยัญชนะ
+        if (Character.getType(nextCodePoint) == Character.NON_SPACING_MARK) return false;
+        // ห้ามแยกสระหน้า (เ แ โ ไ ใ) ออกจากพยัญชนะที่ตามมา
+        final int last = mWordComposer.lastChar();
+        return !(last >= 0x0E40 && last <= 0x0E44);
+    }
+
+    private void commitThaiComposingChunk() {
+        final String chunk = mWordComposer.getTypedWord();
+        if (chunk.isEmpty()) return;
+        mConnection.commitText(chunk, 1); // commit ตรง ๆ ไม่ให้ระบบจำชิ้นส่วนประโยคเป็นคำ
+        resetComposingState(true);
+    }
     private boolean isCursorAtStartOrAfterSeparator(SettingsValues settingsValues) {
         var codePointBeforeCursor = mConnection.getCodePointBeforeCursor();
         return codePointBeforeCursor == Constants.NOT_A_CODE
