@@ -210,6 +210,14 @@ public class ProximityInfo {
             keyHeights[infoIndex] = key.getHeight();
             keyCharCodes[infoIndex] = key.getCode();
             infoIndex++;
+                        if (THAI_SHIFT_MAPPING.containsKey(key.getCode())) {
+                keyXCoordinates[infoIndex] = key.getX();
+                keyYCoordinates[infoIndex] = key.getY();
+                keyWidths[infoIndex] = key.getWidth();
+                keyHeights[infoIndex] = key.getHeight();
+                keyCharCodes[infoIndex] = THAI_SHIFT_MAPPING.get(key.getCode());
+                infoIndex++;
+            }
         }
 
         if (touchPositionCorrection.isValid()) {
