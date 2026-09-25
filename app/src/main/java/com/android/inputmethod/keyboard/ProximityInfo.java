@@ -148,14 +148,21 @@ public class ProximityInfo {
             final List<Key> neighborKeys = mGridNeighbors[i];
             final int proximityCharsLength = neighborKeys.size();
             int infoIndex = i * MAX_PROXIMITY_CHARS_SIZE;
+            int charsAdded = 0;
             for (int j = 0; j < proximityCharsLength; ++j) {
                 final Key neighborKey = neighborKeys.get(j);
-                // Excluding from proximityCharsArray
-                if (!needsProximityInfo(neighborKey)) {
-                    continue;
-                }
+                if (!needsProximityInfo(neighborKey)) continue;
+                if (charsAdded >= MAX_PROXIMITY_CHARS_SIZE) break;
+
                 proximityCharsArray[infoIndex] = neighborKey.getCode();
                 infoIndex++;
+                charsAdded++;
+
+                if (THAI_SHIFT_MAPPING.containsKey(neighborKey.getCode()) && charsAdded < MAX_PROXIMITY_CHARS_SIZE) {
+                    proximityCharsArray[infoIndex] = THAI_SHIFT_MAPPING.get(neighborKey.getCode());
+                    infoIndex++;
+                    charsAdded++;
+                }
             }
         }
         if (DEBUG) {
