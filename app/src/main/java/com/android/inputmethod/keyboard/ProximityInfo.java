@@ -260,6 +260,12 @@ public class ProximityInfo {
                             Constants.printableCode(key.getCode())));
                 }
                 infoIndex++;
+                                if (THAI_SHIFT_MAPPING.containsKey(key.getCode())) {
+                    sweetSpotCenterXs[infoIndex] = sweetSpotCenterXs[infoIndex - 1];
+                    sweetSpotCenterYs[infoIndex] = sweetSpotCenterYs[infoIndex - 1];
+                    sweetSpotRadii[infoIndex] = sweetSpotRadii[infoIndex - 1];
+                    infoIndex++;
+                }
             }
         } else {
             sweetSpotCenterXs = sweetSpotCenterYs = sweetSpotRadii = null;
