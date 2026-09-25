@@ -21,6 +21,9 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Locale;
+import java.util.HashMap;
+import java.util.Map;
+
 
 public class ProximityInfo {
     private static final String TAG = ProximityInfo.class.getSimpleName();
@@ -33,6 +36,37 @@ public class ProximityInfo {
     @NonNull
     private static final List<Key> EMPTY_KEY_LIST = Collections.emptyList();
     private static final float DEFAULT_TOUCH_POSITION_CORRECTION_RADIUS = 0.15f;
+        private static final Map<Integer, Integer> THAI_SHIFT_MAPPING = new HashMap<>();
+    static {
+        // แถว 1
+        THAI_SHIFT_MAPPING.put((int)'ๅ', (int)'+'); THAI_SHIFT_MAPPING.put((int)'/', (int)'๑');
+        THAI_SHIFT_MAPPING.put((int)'_', (int)'๒'); THAI_SHIFT_MAPPING.put((int)'ภ', (int)'๓');
+        THAI_SHIFT_MAPPING.put((int)'ถ', (int)'๔'); THAI_SHIFT_MAPPING.put((int)'ุ', (int)'ู');
+        THAI_SHIFT_MAPPING.put((int)'ึ', (int)'฿'); THAI_SHIFT_MAPPING.put((int)'ค', (int)'๕');
+        THAI_SHIFT_MAPPING.put((int)'ต', (int)'๖'); THAI_SHIFT_MAPPING.put((int)'จ', (int)'๗');
+        THAI_SHIFT_MAPPING.put((int)'ข', (int)'๘'); THAI_SHIFT_MAPPING.put((int)'ช', (int)'๙');
+        // แถว 2
+        THAI_SHIFT_MAPPING.put((int)'ๆ', (int)'๐'); THAI_SHIFT_MAPPING.put((int)'ไ', (int)'"');
+        THAI_SHIFT_MAPPING.put((int)'ำ', (int)'ฎ'); THAI_SHIFT_MAPPING.put((int)'พ', (int)'ฑ');
+        THAI_SHIFT_MAPPING.put((int)'ะ', (int)'ธ'); THAI_SHIFT_MAPPING.put((int)'ั', (int)'ํ');
+        THAI_SHIFT_MAPPING.put((int)'ี', (int)'๊'); THAI_SHIFT_MAPPING.put((int)'ร', (int)'ณ');
+        THAI_SHIFT_MAPPING.put((int)'น', (int)'ฯ'); THAI_SHIFT_MAPPING.put((int)'ย', (int)'ญ');
+        THAI_SHIFT_MAPPING.put((int)'บ', (int)'ฐ'); THAI_SHIFT_MAPPING.put((int)'ล', (int)',');
+        // แถว 3
+        THAI_SHIFT_MAPPING.put((int)'ฟ', (int)'ฤ'); THAI_SHIFT_MAPPING.put((int)'ห', (int)'ฆ');
+        THAI_SHIFT_MAPPING.put((int)'ก', (int)'ฏ'); THAI_SHIFT_MAPPING.put((int)'ด', (int)'โ');
+        THAI_SHIFT_MAPPING.put((int)'เ', (int)'ฌ'); THAI_SHIFT_MAPPING.put((int)'้', (int)'็');
+        THAI_SHIFT_MAPPING.put((int)'่', (int)'๋'); THAI_SHIFT_MAPPING.put((int)'า', (int)'ษ');
+        THAI_SHIFT_MAPPING.put((int)'ส', (int)'ศ'); THAI_SHIFT_MAPPING.put((int)'ว', (int)'ซ');
+        THAI_SHIFT_MAPPING.put((int)'ง', (int)'.'); THAI_SHIFT_MAPPING.put((int)'ฃ', (int)'ฅ');
+        // แถว 4
+        THAI_SHIFT_MAPPING.put((int)'ผ', (int)'('); THAI_SHIFT_MAPPING.put((int)'ป', (int)')');
+        THAI_SHIFT_MAPPING.put((int)'แ', (int)'ฉ'); THAI_SHIFT_MAPPING.put((int)'อ', (int)'ฮ');
+        THAI_SHIFT_MAPPING.put((int)'ิ', (int)'ฺ'); THAI_SHIFT_MAPPING.put((int)'ื', (int)'์');
+        THAI_SHIFT_MAPPING.put((int)'ท', (int)'?'); THAI_SHIFT_MAPPING.put((int)'ม', (int)'ฒ');
+        THAI_SHIFT_MAPPING.put((int)'ใ', (int)'ฬ'); THAI_SHIFT_MAPPING.put((int)'ฝ', (int)'ฦ');
+    }
+
 
     private final int mGridWidth;
     private final int mGridHeight;
