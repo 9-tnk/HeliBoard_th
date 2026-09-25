@@ -182,7 +182,13 @@ public class ProximityInfo {
         }
 
         final List<Key> sortedKeys = mSortedKeys;
-        final int keyCount = getProximityInfoKeysCount(sortedKeys);
+        int virtualKeyCount = 0;
+        for (Key k : sortedKeys) {
+            if (needsProximityInfo(k) && THAI_SHIFT_MAPPING.containsKey(k.getCode())) {
+                virtualKeyCount++;
+            }
+        }
+        final int keyCount = getProximityInfoKeysCount(sortedKeys) + virtualKeyCount;
         final int[] keyXCoordinates = new int[keyCount];
         final int[] keyYCoordinates = new int[keyCount];
         final int[] keyWidths = new int[keyCount];
